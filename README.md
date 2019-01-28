@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/license-Apache2-blue.svg)
 [![](https://img.shields.io/badge/readme-English-blue.svg)](https://github.com/Jacksgong/okcat)
 [![](https://img.shields.io/badge/readme-中文-blue.svg)](https://github.com/Jacksgong/okcat/blob/master/README-zh.md)
-[![](https://img.shields.io/badge/pip-v1.1.6%20okcat-yellow.svg)](https://pypi.python.org/pypi/OkCat)
+[![](https://img.shields.io/badge/pip-v1.1.7%20okcat-yellow.svg)](https://pypi.python.org/pypi/OkCat)
 [![Build Status](https://travis-ci.org/Jacksgong/okcat.svg?branch=master)](https://travis-ci.org/Jacksgong/okcat)
 
 An powerful log processor.
@@ -71,7 +71,7 @@ You can create your own `.yaml` file as config file on `~/.okcat/` folder or the
 the following is demo of config file, Of course, you don't have to provide all configs such below, if you think which one is needed, just config that one.
 
 ```yml
-# extends from exist yml file
+# extends from exist yml file (provide only filename without `.yml` extension)
 # from: exist-yml-name
 
 # we will filter out logs with the provided package (name)
@@ -79,15 +79,15 @@ the following is demo of config file, Of course, you don't have to provide all c
 package: com.liulishuo.filedownloader.demo
 
 # this 'log-line-regex' is just a regex for one line log
-# now we support keyword: 'data' 'time' 'level' 'tag' 'process' 'thread' 'message'
+# now we support keyword: 'date' 'time' 'level' 'tag' 'process' 'thread' 'message'
 # you don't have to provide all keyword, but you have to provide at least the 'message'
 # such as: 'message="(\S*)"'
-log-line-regex: 'data,time,process,thread,level,tag,message = "(.\S*) *(.\S*) *(\d*) *(\d*) *([A-Z]) *([^:]*): *(.*?)$"'
+log-line-regex: 'date,time,process,thread,level,tag,message = "(.\S*) *(.\S*) *(\d*) *(\d*) *([A-Z]) *([^:]*): *(.*?)$"'
 
 # on the case of filter logs from Android adb logcat, we using 'adb logcat -v brief -v threadtime' command to obtain logcat
 # in the normal case you don't need ot provide this config, because there is a perfect one on the okcat internal
 # but if you want to customize the regex log from adb logcat, it's free to define it such below
-# adb-log-line-regex: 'data,time,process,thread,level,tag,message="(.\S*) *(.\S*) *(\d*) *(\d*) *([A-Z]) *([^:]*): *(.*?)$"'
+# adb-log-line-regex: 'date,time,process,thread,level,tag,message="(.\S*) *(.\S*) *(\d*) *(\d*) *([A-Z]) *([^:]*): *(.*?)$"'
 
 # separator regex list
 # you can provide multiple regex to separate serial logs
