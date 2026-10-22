@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/license-Apache2-blue.svg)
 [![](https://img.shields.io/badge/readme-English-blue.svg)](https://github.com/Jacksgong/okcat)
 [![](https://img.shields.io/badge/readme-中文-blue.svg)](https://github.com/Jacksgong/okcat/blob/master/README-zh.md)
-[![](https://img.shields.io/badge/pip-v1.3.0%20okcat-yellow.svg)](https://pypi.python.org/pypi/OkCat)
+[![](https://img.shields.io/badge/pip-v1.4.0%20okcat-yellow.svg)](https://pypi.org/project/OkCat/1.4.0/)
 [![Build Status](https://travis-ci.org/Jacksgong/okcat.svg?branch=master)](https://travis-ci.org/Jacksgong/okcat)
 
 An powerful log processor.
@@ -31,6 +31,10 @@ An powerful log processor.
 ![](https://github.com/Jacksgong/okcat/raw/master/arts/hide-msg-demo.png)
 - separate logs
 ![](https://github.com/Jacksgong/okcat/raw/master/arts/separate-demo.png)
+- ignore msg on logs:
+`when you provide such list, the msg start with provided msg will be ignored to printed`
+- ignore tag on logs:
+`when you provide such list, the tag in the list will be ignored to printed`
 
 ## How to Install
 
@@ -133,6 +137,16 @@ highlight-list:
   - 'Url['
   - 'Tag['
   - 'range['
+
+# ignore message list
+# when you provide such list, the msg start with provided msg will be ignored to printed 
+ignore-msg-list:
+  - 'log start with this will be ignored' 
+
+# ignore tag list
+# when you provide such list, the tag in the list will be ignored to printed
+ignore-tag-list:
+  - 'tagToBeIgnored'
 ```
 
 #### 2. Execute
@@ -171,6 +185,12 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 ```
+
+## Dev
+
+Import to PyCharm, and Set the Project Structure:
+
+![](https://github.com/Jacksgong/okcat/raw/master/arts/pycharm-build.jpg)
 
 ## LICENSE
 

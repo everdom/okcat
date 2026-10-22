@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/license-Apache2-blue.svg)
 [![](https://img.shields.io/badge/readme-English-blue.svg)](https://github.com/Jacksgong/okcat)
 [![](https://img.shields.io/badge/readme-中文-blue.svg)](https://github.com/Jacksgong/okcat/blob/master/README-zh.md)
-[![](https://img.shields.io/badge/pip-v1.3.0%20okcat-yellow.svg)](https://pypi.python.org/pypi/OkCat)
+[![](https://img.shields.io/badge/pip-v1.4.0%20okcat-yellow.svg)](https://pypi.org/project/OkCat/1.4.0/)
 [![Build Status](https://travis-ci.org/Jacksgong/okcat.svg?branch=master)](https://travis-ci.org/Jacksgong/okcat)
 
 强大的日志处理组件。
@@ -37,6 +37,8 @@ okcat 包名
 ![](https://github.com/Jacksgong/okcat/raw/master/arts/hide-msg-demo.png)
 - 对连续的日志进行分割
 ![](https://github.com/Jacksgong/okcat/raw/master/arts/separate-demo.png)
+- 忽略符合规则日志
+`以提供的字段开头的日志将会被直接忽略` 或者 `满足以提供的TAG的日志将会被直接忽略`
 
 ## 如何安装
 
@@ -138,6 +140,16 @@ highlight-list:
   - 'Url['
   - 'Tag['
   - 'range['
+  
+# 忽略日志列表
+# 以提供的字段开头的日志将会被直接忽略
+ignore-msg-list:
+  - 'log start with this will be ignored'
+
+# 忽略日志TAG列表
+# 当所在日志的 TAG 在该列表中时会被直接忽略
+ignore-tag-list:
+  - 'tagToBeIgnored'
 ```
 
 #### 2. 执行
